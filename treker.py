@@ -1,10 +1,11 @@
 def newtask():
+    print("Enter the task or press 0 to cancel the action.")
     file = open("test.txt", "a")
     content = input()
     if content != '0':
         file.write(content + "\n")
     file.close()
-def outtasks():
+def displaytasks():
     file = open('test.txt', 'r')
     line = 0
     print("Your Tasks: \n")
@@ -13,7 +14,7 @@ def outtasks():
         print(line,". ",lines.strip(), sep="")
     file.close()
 def marktask():
-    print("Enter num task or enter 0 if you dont")
+    print("Enter the task number or 0 to cancel the action.")
     file = open("test.txt", 'a+')
     file.seek(0)
     line = int(input())
@@ -29,17 +30,18 @@ while True:
 
     print("1. Out all tasks\n" \
     "2. New task\n" \
-    "3. Mark complete task\n" \
+    "3. mark a task as completed\n" \
     "0. Exit")
     enter = int(input())
     match enter:
         case 1:
-            outtasks()
+            displaytasks()
         case 2:
             newtask()           
         case 3:
             marktask()
         case 0:
+            print("Goodbye!")
             break
     print("\n")
     print("--------------------------------------------------------")

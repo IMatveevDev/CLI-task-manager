@@ -16,13 +16,12 @@ def marktask():
     file = open("test.txt", 'a+')
     file.seek(0)
     line = int(input())
-    if line == 0:
-        exit
-    lines = file.readlines()
-    del lines[line-1]
-    file.close()
-    file = open("test.txt", 'w')
-    file.writelines(lines)
+    if line != 0:
+        lines = file.readlines()
+        del lines[line-1]
+        file.close()
+        file = open("test.txt", 'w')
+        file.writelines(lines)
     file.close()
 enter = 1
 while True:

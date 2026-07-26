@@ -1,7 +1,8 @@
 def newtask():
     file = open("test.txt", "a")
     content = input()
-    file.write(content + "\n")
+    if content != '0':
+        file.write(content + "\n")
     file.close()
 def outtasks():
     file = open('test.txt', 'r')
@@ -42,4 +43,3 @@ while True:
             break
     print("\n")
     print("--------------------------------------------------------")
-    print("hello world")

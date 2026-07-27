@@ -26,22 +26,26 @@ def marktask():
         file.writelines(lines)
     file.close()
 enter = 1
-while True:
+def main():
+    while True:
 
-    print("1. Out all tasks\n" \
-    "2. New task\n" \
-    "3. mark a task as completed\n" \
-    "0. Exit")
-    enter = int(input())
-    match enter:
-        case 1:
+        print("1. Out all tasks\n" \
+        "2. New task\n" \
+        "3. mark a task as completed\n" \
+        "0. Exit")
+        enter = input()
+        
+        if enter == '1':
             displaytasks()
-        case 2:
+        elif enter == '2':
             newtask()           
-        case 3:
+        elif enter == '3':
             marktask()
-        case 0:
+        elif enter == '0':
             print("Goodbye!")
             break
-    print("\n")
-    print("--------------------------------------------------------")
+        else:
+            print("wrong choice")
+        print("\n")
+        print("--------------------------------------------------------")
+main()

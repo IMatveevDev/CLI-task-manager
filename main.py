@@ -1,10 +1,8 @@
 import tasks
-from pathlib import Path
 
-filename = Path("tasks.txt")
-if not filename.is_file():
-    with open("tasks.txt", 'w') as f:
-        f.write("")
+filename = 'tasks.txt'
+with open("tasks.txt", 'a') as f:
+    f.write("")
 def main():
     while True:
 
